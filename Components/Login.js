@@ -1,19 +1,31 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn, getProviders } from "next-auth/react";
+import { useState, useEffect } from "react";
 
-export default function Component() {
-  const { data: session } = useSession();
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
+export default function Login() {
+  const [providers, setProviders] = useState([]);
+  useEffect(() => {
+    getProviders().then((prov) => {
+      setProviders(Object.values(prov));
+    });
+  }, []);
+
+  console.log(providers);
   return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
+    <div className="flex flex-col">
+      <input type="text" placeholder="Email..." />
+      <input type="password" placeholder="Contraseña..." />
+      <button onClick={() => signIn("email")}>Login</button>
+      {providers.map((provider) => {
+        return (
+          <button
+            key={provider.id}
+            onClick={() => signIn(provider.id)}
+            className=""
+          >
+            {provider.name}
+          </button>
+        );
+      })}
+    </div>
   );
 }

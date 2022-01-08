@@ -1,9 +1,11 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { prisma } from "/prisma/index";
 
 export default NextAuth({
-  // Configure one or more authentication providers
+  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
@@ -14,4 +16,5 @@ export default NextAuth({
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
     }),
   ],
+  secret: process.env.SECRET,
 });
