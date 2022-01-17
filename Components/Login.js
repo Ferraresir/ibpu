@@ -8,8 +8,6 @@ export default function Login() {
       setProviders(Object.values(prov));
     });
   }, []);
-
-  console.log(providers);
   return (
     <div className="flex flex-col">
       <input type="text" placeholder="Email..." />
