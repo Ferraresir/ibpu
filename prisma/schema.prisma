@@ -7,6 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//DEFAULT NEXTAUTH MODELS
+
 model Account {
   id                 String  @id @default(cuid())
   userId             String
@@ -55,18 +57,15 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Pago {
-  id            String   @id @default(cuid())
-  userId        String
-  moduleid      String
-  date          DateTime @default(now())
-  amount        Int
-  description   String
-  status        String
-  paymentMethod String
-  paymentidprov String
-  User          User     @relation(fields: [userId], references: [id])
-  Module        Modulo   @relation(fields: [moduleid], references: [id])
+//CUSTOM MODELS
+
+model Category {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  image       String
+  curso       Curso?  @relation(fields: [cursoId], references: [id])
+  cursoId     String?
 }
 
 model Curso {
@@ -90,11 +89,16 @@ model Modulo {
   Pago        Pago[]
 }
 
-model Category {
-  id          String  @id @default(cuid())
-  name        String
-  description String
-  image       String
-  Curso       Curso?  @relation(fields: [cursoId], references: [id])
-  cursoId     String?
+model Pago {
+  id            String   @id @default(cuid())
+  userId        String
+  moduleid      String
+  date          DateTime @default(now())
+  amount        Int
+  description   String
+  status        String
+  paymentMethod String
+  paymentidprov String
+  User          User     @relation(fields: [userId], references: [id])
+  Module        Modulo   @relation(fields: [moduleid], references: [id])
 }
