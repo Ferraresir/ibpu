@@ -64,28 +64,29 @@ model Category {
   name        String
   description String
   image       String
-  curso       Curso?  @relation(fields: [cursoId], references: [id])
+  curso       Curso[]
   cursoId     String?
 }
 
 model Curso {
-  id          String     @id @default(cuid())
+  id          String    @id @default(cuid())
   name        String
   description String
   price       Int
   image       String
   state       Boolean
   modulos     Modulo[]
-  category    Category[]
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int
 }
 
 model Modulo {
-  id          String  @id @default(cuid())
+  id          String @id @default(cuid())
   description String
   price       Int
   link        String
-  Curso       Curso?  @relation(fields: [cursoId], references: [id])
-  cursoId     String?
+  Curso       Curso  @relation(fields: [cursoId], references: [id])
+  cursoId     String
   Pago        Pago[]
 }
 
@@ -100,5 +101,5 @@ model Pago {
   paymentMethod String
   paymentidprov String
   User          User     @relation(fields: [userId], references: [id])
-  Module        Modulo   @relation(fields: [moduleid], references: [id])
+  Module        Modulo[]
 }
