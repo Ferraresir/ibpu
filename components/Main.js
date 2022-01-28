@@ -33,6 +33,7 @@ export default function Main(props) {
           </div>
         </div>
       </section>
+      <hr/>
       <section className="py-16 bg-gray-100">
         <div className="container max-w-6xl mx-auto">
           <h2 className="text-4xl pb-12 font-bold tracking-tight text-center">

@@ -1,10 +1,11 @@
 import { MdOutlineTransitEnterexit } from "react-icons/md";
+import Image from 'next/image';
 
 export default function Categories({ categories }) {
   const categoryList = categories.map((category) => {
     return (
       <div className="w-3/4 sm:w-full mx-auto bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-          <img className="rounded-t-lg" src={category.image} alt="" />
+          <Image className="rounded-t-lg" src={category.image} width={338} height={225} layout="responsive"/>
           <div className="p-5">
             <a href="#">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -16,7 +17,7 @@ export default function Categories({ categories }) {
             </p>
             <a
               href="#"
-              className="flex w-1/3 mx-auto items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="flex items-center justify-center w-1/3 mx-auto  py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Ver
               <MdOutlineTransitEnterexit className="ml-2 text-lg" />
