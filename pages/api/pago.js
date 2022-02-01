@@ -2,18 +2,18 @@ import mercadoPago from "mercadopago";
 
 // Agrega credenciales
 mercadoPago.configure({
-  access_token: "PROD_ACCESS_TOKEN",
+  access_token: process.env.MERCADO_TOKEN,
 });
 
 //crear objecto
-export default pago = async (req, res) => {
+export default async (req, res) => {
   let preference = {
     items: [
       {
-        id: req.body.id,
-        title: req.body.title,
-        unit_price: req.body.price,
-        quantity: 1,
+        title: "curso salud",
+        description: "curso de salud",
+        unit_price: 4000,
+        quantity: 2,
       },
     ],
   };
@@ -21,6 +21,7 @@ export default pago = async (req, res) => {
   mercadoPago.preferences
     .create(preference)
     .then((response) => {
+      console.log(response);
       res.status(200).json(response);
     })
     .catch((error) => {
