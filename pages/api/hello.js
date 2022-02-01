@@ -1,6 +1,6 @@
 import prisma from "/prisma/index.js";
 
-export default async (req, res) => {
+export default test = async (req, res) => {
   const users = await prisma.curso.findMany({
     include: { modulos: true },
   });
