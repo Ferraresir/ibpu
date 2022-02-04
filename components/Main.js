@@ -1,5 +1,6 @@
 import Categories from "./Categories";
 import Comments from "./Comments";
+import Curso from "./Curso";
 
 
 export default function Main(props) {
@@ -54,6 +55,7 @@ export default function Main(props) {
       </section>
       <Categories {...props} />
       <Comments />
+      <Curso/>
     </>
   );
 }
