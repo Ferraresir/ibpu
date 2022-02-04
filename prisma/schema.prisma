@@ -71,8 +71,10 @@ model Category {
 model Curso {
   id          String   @id @default(cuid())
   name        String
-  description String
-  price       Int
+  content     String
+  horas       Int
+  certificado String
+  target      String
   image       String
   state       Boolean
   modulos     Modulo[]
@@ -85,7 +87,7 @@ model Modulo {
   description String
   price       Int
   link        String
-  Curso       Curso  @relation(fields: [cursoId], references: [id])
+  Curso       Curso  @relation(fields: [cursoId], references: [id], onDelete: Cascade)
   cursoId     String
   Pago        Pago[]
 }
