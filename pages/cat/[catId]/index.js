@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import prisma from "../../prisma";
+import prisma from '../../../prisma'
 
 
 export const getStaticPaths = async () => {
