@@ -1,5 +1,6 @@
 import { MdOutlineTransitEnterexit } from "react-icons/md";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Categories({ categories }) {
   const categoryList = categories.map((category) => {
@@ -17,21 +18,21 @@ export default function Categories({ categories }) {
           alt={`imagen descriptiva del ${category.name}`}
         />
         <div className="p-5">
-          <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {category.name}
-            </h5>
-          </a>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {category.name}
+          </h5>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {category.description}
           </p>
-          <a
-            href="#"
-            className="flex items-center justify-center w-1/3 mx-auto  py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Ver
-            <MdOutlineTransitEnterexit className="ml-2 text-lg" />
-          </a>
+          <Link href={`/cat/${category.id}`}>
+            <a
+              href="#"
+              className="flex items-center justify-center w-1/3 mx-auto  py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Ver
+              <MdOutlineTransitEnterexit className="ml-2 text-lg" />
+            </a>
+          </Link>
         </div>
       </div>
     );
