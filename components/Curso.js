@@ -1,5 +1,15 @@
-import React from 'react';
-
 export default function Curso() {
-  return <div></div>;
+  const handlePago = () => {
+    fetch("http://localhost:3000/api/pago", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+  return (
+    <div>
+      <button onClick={handlePago}>Pagar</button>
+    </div>
+  );
 }

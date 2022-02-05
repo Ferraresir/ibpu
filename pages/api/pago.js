@@ -6,7 +6,7 @@ mercadoPago.configure({
 });
 
 //crear objecto
-export default async (req, res) => {
+export default async function (req, res) {
   let preference = {
     items: [
       {
@@ -27,4 +27,4 @@ export default async (req, res) => {
     .catch((error) => {
       res.status(500).json(error);
     });
-};
+}

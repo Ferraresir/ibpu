@@ -7,11 +7,17 @@ export default function Component(props) {
   return (
     <>
       <Head>
-        <title>Ibpu</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>Ibpu | Inicio</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+        <meta name="keywords" content="Universidad cursos estudia online" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <Layout children={<Main {...props}/>} />
+      <Layout>
+        <Main {...props} />
+      </Layout>
     </>
   );
 }
