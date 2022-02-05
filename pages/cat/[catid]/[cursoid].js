@@ -1,18 +1,26 @@
 import prisma from "../../../prisma";
 
 export const getStaticPaths = async () => {
-  const categorys = await prisma.category.findMany({include: {curso: true}});
-  console.log(categorys);
-  const paths = categorys.map((category) => ({
-    params: { catid: category.id.toString()},
+  const cursos = await prisma.curso.findMany();
+  const paths = cursos.map((curso) => ({
+    params: {
+      catid: curso.categoryId.toString(),
+      cursoid: curso.id.toString(),
+    },
   }));
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context) => {
-  console.log(context);
+  let id = context.params.cursoid;
+  const curso = await prisma.curso.findUnique({ where: { id: id } });
+  return { props: { curso } };
 };
 
-export default function Curso() {
-  return <div></div>;
+export default function Curso({ curso }) {
+  return (
+    <div>
+      <h1>{curso.name}</h1>
+    </div>
+  );
 }

@@ -11,7 +11,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  console.log(context);
   let id = parseInt(context.params.catid);
   const cursos = await prisma.curso.findMany({ where: { categoryId: id } });
   return { props: { cursos } };
@@ -19,7 +18,6 @@ export const getStaticProps = async (context) => {
 
 export default function Category({ cursos }) {
   const router = useRouter();
-  const id = router.query.catid;
   return (
     <div>
     </div>
