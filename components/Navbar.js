@@ -9,7 +9,7 @@ export default function Navbar() {
         <a 
           className="relative z-10 flex items-center w-auto text-2xl font-extrabold leading-none text-black select-none"
         >
-        <Image className="ml-2" src='/logo.png' width={40} height={40}/>
+        <Image alt="" className="ml-2" src='/logo.png' width={40} height={40}/>
         Ibpu
         </a>
         </Link>
@@ -23,7 +23,7 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
               <span
                 x-show="hover"
-                className="absolute inset-0 inline-block w-full h-1 h-full transform bg-gray-900"
+                className="absolute inset-0 inline-block w-full h-full transform bg-gray-900"
               ></span>
             </span>
           </a>
@@ -36,12 +36,12 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
               <span
                 x-show="hover"
-                className="absolute inset-0 inline-block w-full h-1 h-full transform bg-gray-900"
+                className="absolute inset-0 inline-block w-full h-full transform bg-gray-900"
               ></span>
             </span>
           </a>
+          <Link href='#cat'>
           <a
-            href="#_"
             className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
             x-data="{ hover: false }"
           >
@@ -49,10 +49,11 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
               <span
                 x-show="hover"
-                className="absolute inset-0 inline-block w-full h-1 h-full transform bg-gray-900"
+                className="absolute inset-0 inline-block w-full h-full transform bg-gray-900"
               ></span>
             </span>
           </a>
+          </Link>
           <a
             href="#_"
             className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
@@ -62,7 +63,7 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
               <span
                 x-show="hover"
-                className="absolute inset-0 inline-block w-full h-1 h-full transform bg-gray-900"
+                className="absolute inset-0 inline-block w-full h-full transform bg-gray-900"
               ></span>
             </span>
           </a>

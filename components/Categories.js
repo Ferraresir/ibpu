@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Categories({ categories }) {
+
   const categoryList = categories.map((category) => {
     return (
       <div
@@ -38,7 +39,7 @@ export default function Categories({ categories }) {
   });
 
   return (
-    <section className="py-12 bg-white">
+    <section id='cat' className="py-12 bg-white">
       <div className="container max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold tracking-tight text-center pb-6">
           Areas

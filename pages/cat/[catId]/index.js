@@ -18,8 +18,19 @@ export const getStaticProps = async (context) => {
 
 export default function Category({ cursos }) {
   const router = useRouter();
+  const catid = router.query.catid;
   return (
     <div>
+      {cursos.map((curso) => (
+        <div key={curso.id}>
+          <Link href={`/cat/${catid}/${curso.id}`}>
+            <a>
+              <h4>{curso.name}</h4>
+              <p>{curso.content.slice(0,100)}...</p>
+            </a>
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
