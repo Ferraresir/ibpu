@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function comments() {
   return (
-    <section className="flex items-center justify-center py-16 bg-gray-100 w-screen overflow-hidden">
+    <section className="flex items-center justify-center py-16 bg-gray-100 w-screen">
       <div className="max-w-6xl px-12 mx-auto bg-gray-100 md:px-16 xl:px-10">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="flex flex-col items-center justify-center w-full h-full mx-auto pr-8 mb-10 lg:mb-0 lg:w-1/2">
