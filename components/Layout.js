@@ -1,10 +1,10 @@
-import NavBar2 from "./NavBar2.js";
+import NavBar from "./NavBar.js";
 import Footer from "./Footer.js";
 
 export default function Layout({ children }) {
   return (
     <>
-      <NavBar2 />
+      <NavBar />
       {children}
       <Footer />
     </>
