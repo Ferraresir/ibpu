@@ -1,10 +1,5 @@
 import prisma from "../../../../prisma";
 
-export const config = {
-  api: {
-    externalResolver: true,
-  },
-};
 
 export default async function category(req, res) {
   //CREATE
@@ -27,6 +22,15 @@ export default async function category(req, res) {
     const categorys = await prisma.category.findMany();
     res.json(categorys);
   }
-
-  //DELETE
 }
+
+// const curso = {
+//   name: "ADMINISTRACION DE EMPRESAS",
+//   content:"",
+//   horas: 240,
+//   certificado:"",
+//   target:"",
+//   image: 'url',
+//   modulos: 12,
+
+// }
