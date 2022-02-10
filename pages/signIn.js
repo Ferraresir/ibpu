@@ -2,6 +2,7 @@ import React from "react";
 import { getProviders, signIn } from "next-auth/react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { AiOutlineGithub } from "react-icons/ai";
 import Image from "next/image";
 
 export const getServerSideProps = async ({ req, res }) => {
@@ -12,28 +13,22 @@ export const getServerSideProps = async ({ req, res }) => {
 const logos = {
   google: <FcGoogle size={20} />,
   facebook: <FaFacebook size={20} />,
+  github: <AiOutlineGithub size={20} />,
 };
 
-export default function ({ providers }) {
+export default function Login({ providers }) {
   return (
     <div className="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
       <div className="flex flex-col items-center justify-center">
-        <Image src='/logo.png' width={80} height={80}/>
+        <Image src="/logo.png" width={80} height={80} alt="Ibpu logo" />
 
         <div className="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
-          <p
-            tabindex="0"
-            className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800"
-          >
+          <p className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">
             Ingresa con tu cuenta
           </p>
-          <p
-            tabindex="0"
-            className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"
-          >
+          <p className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">
             No tienes una cuenta?{" "}
             <a
-              href="javascript:void(0)"
               className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"
             >
               {" "}
@@ -77,7 +72,7 @@ export default function ({ providers }) {
           </div>
           <div className="mt-6  w-full">
             <label
-              for="pass"
+              htmlFor="pass"
               className="text-sm font-medium leading-none text-gray-800"
             >
               Contraseña
