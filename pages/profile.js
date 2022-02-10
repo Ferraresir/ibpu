@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import prisma from "../prisma";
 
 export default function Profile(props) {
   const { data: session, status } = useSession();
@@ -14,7 +15,3 @@ export default function Profile(props) {
   return <div>profile</div>;
 }
 
-export const getServerSideProps = async (ctx) => {
-  console.log(ctx);
-  return { props: { id: "choli" } };
-};

@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "@next-auth/prisma-adapter": "^1.0.1",
     "@prisma/client": "^3.7.0",
     "mercadopago": "^1.5.12",
