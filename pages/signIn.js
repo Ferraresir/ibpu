@@ -5,8 +5,8 @@ import { FcGoogle } from "react-icons/fc";
 import { AiOutlineGithub } from "react-icons/ai";
 import Image from "next/image";
 
-export const getServerSideProps = async ({ req, res }) => {
-  const providers = await getProviders({ req, res });
+export const getServerSideProps = async () => {
+  const providers = await getProviders();
   return { props: { providers } };
 };
 
@@ -28,9 +28,7 @@ export default function Login({ providers }) {
           </p>
           <p className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">
             No tienes una cuenta?{" "}
-            <a
-              className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"
-            >
+            <a className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer">
               {" "}
               Registrate
             </a>
