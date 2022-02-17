@@ -2,6 +2,7 @@ import prisma from "../../../prisma";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
+import Image from "next/image";
 
 export const getStaticPaths = async () => {
   const categorys = await prisma.category.findMany();
@@ -23,13 +24,17 @@ export default function Category({ cursos }) {
   return (
     <Layout>
       <div>
+        <h1>Cursos de la categoria {catid}</h1>
         {cursos.map((curso) => (
           <div key={curso.id}>
-            <Link href={`/cat/${catid}/${curso.id}`}>
-              <a>
-                <h4>{curso.name}</h4>
-                <p>{curso.content.slice(0, 100)}...</p>
-              </a>
+            <Link passHref href={`/cat/${catid}/${curso.id}`}>
+              <div>
+                <Image src={curso.image} height={40} width={40} alt="" />
+                <a>
+                  <h4>{curso.name}</h4>
+                  <p>{curso.description}...</p>
+                </a>
+              </div>
             </Link>
           </div>
         ))}
