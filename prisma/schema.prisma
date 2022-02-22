@@ -65,7 +65,6 @@ model Category {
   description String
   image       String
   curso       Curso[]
-  cursoId     String?
 }
 
 model Curso {
