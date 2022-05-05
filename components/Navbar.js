@@ -40,14 +40,18 @@ export default function Navbar() {
           </div>
           <div className="flex-1 flex items-center justify-center sm:justify-start">
             <div className="flex-shrink-0 flex justify-center">
-              <Image
-                className="block"
-                src="/logo.png"
-                alt="Ibpu logo"
-                width={32}
-                height={32}
-              />
-              <p className="text-center">IBPU</p>
+              <Link href="/">
+                <a className="relative z-10 flex items-center w-auto text-2xl font-extrabold leading-none text-black select-none">
+                  <Image
+                    className="ml-2"
+                    src="/logo.png"
+                    alt="Ibpu logo"
+                    width={40}
+                    height={40}
+                  />
+                  IBPU
+                </a>
+              </Link>
             </div>
             <div className="hidden sm:block mx-auto">
               <div className="flex space-x-4 h-16">
