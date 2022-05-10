@@ -1,5 +1,6 @@
 import Categories from "./Categories";
 import Comments from "./Comments";
+import Featured from "./Featured";
 
 export default function Main(props) {
   return (
@@ -33,24 +34,26 @@ export default function Main(props) {
         </div>
       </section>
       <hr />
-      <section className="py-16 bg-gray-100">
+      <section className="py-16">
         <div id="nosotros" className="container max-w-6xl mx-auto">
           <h2 className="text-4xl pb-12 font-bold tracking-tight text-center">
-            Nosotros
+            Sobre Nosotros...
           </h2>
           <p className="mt-2 px-4 pb-6 text-lg text-center text-gray-600">
-            *Brindamos capacitación y formación a todos aquellos que buscan una
-            preparación acorde a las exigencias del mercado laboral actual .
-            *Ofrecemos a nuestros alumnos opciones educativas en la modalidad a
-            distancia en línea a través de su aula virtual. *Podes estudiar
-            desde cualquier lugar del mundo utilizando un dispositivo conectado
-            a internet. Inscribirse hoy mismo es aprender de la mejor manera, de
-            modo simple y sin moverte de tu casa. No dejes pasar la oportunidad
-            de aprender mucho más sobre eso que en verdad te interesa. ¡Hace
-            click y potencia tu futuro profesional!
+            Brindamos capacitación y formación a todos aquellos que buscan una
+            preparación acorde a las exigencias del mercado laboral actual.
+            <br />
+            Ofrecemos a nuestros alumnos opciones educativas en la modalidad a
+            distancia en línea a través de su aula virtual. <br />
+            Podes estudiar desde cualquier lugar del mundo utilizando un
+            dispositivo conectado a internet. Inscribirse hoy mismo es aprender
+            de la mejor manera, de modo simple y sin moverte de tu casa. No
+            dejes pasar la oportunidad de aprender mucho más sobre eso que te
+            interesa. <br /> ¡Hace click y potencia tu futuro profesional!
           </p>
         </div>
       </section>
+      <Featured {...props} />
       <Categories {...props} />
       <Comments />
     </>

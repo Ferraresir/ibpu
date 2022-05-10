@@ -16,7 +16,9 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   console.log(context.params);
   let id = parseInt(context.params.catid);
-  const cursos = await prisma.curso.findMany({ where: { categoryId: id } });
+  const cursos = await prisma.curso.findMany({
+    where: { categoryId: id, partner: false },
+  });
   return { props: { cursos } };
 };
 

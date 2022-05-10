@@ -15,7 +15,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   let id = context.params.cursoid;
-  const curso = await prisma.curso.findUnique({ where: { id: id } });
+  const curso = await prisma.curso.findUnique({
+    where: { id: id },
+  });
   return { props: { curso } };
 };
 
@@ -36,7 +38,7 @@ export default function Curso({ curso }) {
             </p>
             <p className="underline">Orientado a:</p>
             <ul className="p-0 m-0 leading-6 border-0 border-gray-300">
-              {curso.target.split("*").map((target,i) => (
+              {curso.target.split("*").map((target, i) => (
                 <li
                   key={i}
                   className="box-border relative py-2 pl-0 text-left text-gray-500 border-solid"

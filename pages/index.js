@@ -24,5 +24,6 @@ export default function Component(props) {
 
 export async function getStaticProps() {
   const categories = await prisma.category.findMany();
-  return { props: { categories } };
+  const partners = await prisma.curso.findMany({ where: { partner: true } });
+  return { props: { categories, partners } };
 }

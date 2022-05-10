@@ -77,6 +77,7 @@ model Curso {
   target      String
   image       String
   state       Boolean
+  partner     Boolean
   modulos     Modulo[]
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  Int
